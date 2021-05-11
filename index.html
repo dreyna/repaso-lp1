@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container min">        
+        <input type="text" class="caja" id="nombre" placeholder="Nombres">
+        <input type="tel" class="caja" id="telefono" placeholder="Teléfono">
+        <input type="email" class="caja" id="correo" placeholder="Correo">
+        <button class="boton" onclick="registrar()">Registrar</button>
+    </div>
+    <div class="container max">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tbd"></tbody>
+
+        </table>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
