@@ -2,14 +2,14 @@ var nom = document.getElementById("nombre");
 var telef = document.getElementById("telefono");
 var email = document.getElementById("correo");
 var i = 0;
+var filita = "";
+var estado = 0;
 function registrar(){  
-    
+    if(estado==0){
+        alert("save");
     var table = document.getElementById("table");
     var tbody = document.getElementById("tbd");
     var fila = document.createElement("tr");
-    //celda del item
-    var celda_item = document.createElement("td");
-    celda_item.innerHTML=i+1;
     //celda del nombre
     var celda_nombre = document.createElement("td");
     celda_nombre.innerHTML=nom.value;
@@ -23,10 +23,9 @@ function registrar(){
     var celda_accion = document.createElement("td");
     celda_accion.classList.add("accion");
     celda_accion.innerHTML=
-    "<a href='#' class='icono2'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"
-    +"<a href='#' class='icono1'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+    "<a href='#' class='icono2' onclick='editar(this)'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>"
+    +"<a href='#' class='icono1' onclick='eliminar(this)'><i class='fa fa-trash' aria-hidden='true'></i></a>";
 
-    fila.appendChild(celda_item);
     fila.appendChild(celda_nombre);
     fila.appendChild(celda_telefono);
     fila.appendChild(celda_correo);
@@ -37,10 +36,30 @@ function registrar(){
     table.appendChild(tbody);
     limpiar();
     i+=1;
+    }else{
+        alert("editar");
+        filita.cells[0].innerHTML = nom.value;
+        filita.cells[1].innerHTML = telef.value;
+        filita.cells[2].innerHTML = email.value;
+        filita = "";
+        limpiar();
+        estado = 0;
+    }
 }
 function limpiar(){
     nom.value="";
     telef.value="";
     email.value="";
     nom.focus();
+}
+function editar(row){
+    filita = row.parentNode.parentNode;  
+    nom.value = filita.cells[0].innerHTML;
+    telef.value = filita.cells[1].innerHTML;
+    email.value = filita.cells[2].innerHTML;
+    estado = 1;
+}
+function eliminar(row){
+    var fil = row.parentNode.parentNode;
+    fil.parentNode.removeChild(fil);
 }

@@ -10,16 +10,15 @@
 </head>
 <body>
     <div class="container min">        
-        <input type="text" class="caja" id="nombre" placeholder="Nombres">
-        <input type="tel" class="caja" id="telefono" placeholder="Teléfono">
-        <input type="email" class="caja" id="correo" placeholder="Correo">
+        <input type="text" class="caja" id="nombre" placeholder="Nombres" required>
+        <input type="tel" class="caja" id="telefono" placeholder="Teléfono" required>
+        <input type="email" class="caja" id="correo" placeholder="Correo" required>
         <button class="boton" onclick="registrar()">Registrar</button>
     </div>
     <div class="container max">
         <table id="table">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Nombre</th>
                     <th>Teléfono</th>
                     <th>Correo</th>
@@ -27,10 +26,8 @@
                 </tr>
             </thead>
             <tbody id="tbd"></tbody>
-
         </table>
     </div>
-
     <script src="js/script.js"></script>
 </body>
 </html>

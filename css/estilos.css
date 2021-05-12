@@ -45,8 +45,7 @@ th{
     padding: 5px;
 }
 a{
-    text-decoration: none;
-    
+    text-decoration: none;    
 }
 .icono1{
     font-size: 14px;
@@ -62,8 +61,5 @@ td{
 .accion{
     display: flex;
     justify-content: space-evenly;
-    align-content: center;
-  
-    
-    
+    align-content: center;  
 }
